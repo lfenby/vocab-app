@@ -1,5 +1,5 @@
 // time in seconds for the test
-var COUNTDOWN = 60;
+var COUNTDOWN = 2;
 
 jQuery(document).ready(function($) {
   var group = window.location.search.split('=')[1];
@@ -20,7 +20,7 @@ jQuery(document).ready(function($) {
 
   var words = $('.words').find('pre').text().split('\n');
   $('.done').click(function(e) {
-    var answers = $('.test textarea').val().replace(', ', ' ').replace(',', ' ').split(/[\n ]/);
+    var answers = $('.test textarea').val().replace(/, /g, ' ').replace(/,/g, ' ').split(/[\n ]/);
     var numCorrect = 0;
     for(var idx=0; idx<answers.length; idx++) {
       if ($.inArray(answers[idx].toLowerCase(), words) != -1) {
