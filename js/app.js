@@ -1,5 +1,5 @@
 // time in seconds for the test
-var COUNTDOWN = 2;
+var COUNTDOWN = 60;
 
 jQuery(document).ready(function($) {
   var group = window.location.search.split('=')[1];
