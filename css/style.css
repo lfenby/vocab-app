@@ -29,3 +29,12 @@ footer {
   border-top: solid 1px #eee;
 }
 
+/**************************************
+  * Test
+  *************************************/
+
+.test textarea {
+  width: 400px;
+  height: 400px;
+}
+
