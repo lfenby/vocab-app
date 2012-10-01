@@ -21,13 +21,18 @@ jQuery(document).ready(function($) {
   var words = $('.words').find('pre').text().split('\n');
   $('.done').click(function(e) {
     var answers = $('.test textarea').val().replace(/, /g, ' ').replace(/,/g, ' ').split(/[\n ]/);
-    var numCorrect = 0;
+    var correct = [];
+    var wrong = [];
     for(var idx=0; idx<answers.length; idx++) {
       if ($.inArray(answers[idx].toLowerCase(), words) != -1) {
-        numCorrect += 1;
+        correct.push(answers[idx]); 
+      } else {
+        wrong.push(answers[idx]);
       }
     }
-    $('.num-correct').text(numCorrect);
+    $('.num-correct').text(correct.length);
+    $('.correct span').text(correct.join(' '));
+    $('.incorrect span').text(wrong.join(' '));
     switchView('results');
   });
 });
